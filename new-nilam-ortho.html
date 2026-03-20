@@ -3,285 +3,556 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>New Nilam Ortho Enterprises – Muzaffarpur, Bihar</title>
+<title>New Nilam Ortho Enterprises</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
-:root{--g:#4fc21a;--gd:#36990e;--gl:rgba(79,194,26,.25);--sl:#e8edf0;--d:#111214;--d2:#1a1d20;--d3:#22262b;--d4:#2c3138;--tx:#d4dce4;--tm:#7e8fa0}
+:root{--g:#4fc21a;--gd:#36990e;--gl:rgba(79,194,26,.22);--sl:#e8edf0;--d:#111214;--d2:#1a1d20;--d3:#22262b;--d4:#2c3138;--tx:#d4dce4;--tm:#7e8fa0}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Rajdhani',sans-serif;background:var(--d);color:var(--tx);overflow-x:hidden}
+body{font-family:'Rajdhani',sans-serif;background:var(--d);color:var(--tx);overflow-x:hidden;min-height:100vh}
 
-header{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:9px 24px;background:rgba(17,18,20,.97);border-bottom:1px solid rgba(79,194,26,.2)}
-.lw{display:flex;align-items:center;gap:12px}
-.lw img{width:50px;height:50px;border-radius:50%;border:2px solid var(--g);box-shadow:0 0 12px var(--gl);object-fit:cover;flex-shrink:0}
-.lb .b{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--sl);letter-spacing:.04em;display:block;line-height:1.1}
-.lb .t{font-size:.62rem;color:var(--g);letter-spacing:.12em;text-transform:uppercase}
-.hr{display:flex;align-items:center;gap:14px}
-.vb{display:flex;flex-direction:column;align-items:center;background:rgba(79,194,26,.08);border:1px solid rgba(79,194,26,.28);border-radius:8px;padding:4px 12px}
-.vb .vl{font-size:.58rem;color:var(--tm);letter-spacing:.1em;text-transform:uppercase}
-.vb .vc{font-family:'Bebas Neue',sans-serif;font-size:1.25rem;color:var(--g);line-height:1}
-nav a{font-size:.73rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;color:var(--tm);padding:6px 10px;border-radius:5px;transition:color .2s,background .2s;cursor:pointer}
-nav a:hover{color:var(--g);background:rgba(79,194,26,.08)}
+/* ── PAGE SYSTEM ── */
+.page{display:none;min-height:100vh;padding-top:80px;animation:fadeIn .4s ease}
+.page.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:120px 20px 60px}
-.hbg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 50% 55%,rgba(79,194,26,.07) 0%,transparent 70%),linear-gradient(180deg,#0c0e10 0%,#111214 100%)}
-.hx{position:absolute;inset:0;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='64'%3E%3Cpath d='M28 2 L54 18 L54 46 L28 62 L2 46 L2 18 Z' fill='none' stroke='%234fc21a' stroke-width='1'/%3E%3C/svg%3E");background-size:56px 64px}
+/* ── HEADER ── */
+header{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(17,18,20,.97);border-bottom:1px solid rgba(79,194,26,.2);padding:10px 24px}
+.header-inner{display:flex;flex-direction:column;align-items:center;gap:6px}
+.logo-row{display:flex;align-items:center;gap:13px;cursor:pointer}
+.logo-row img{width:50px;height:50px;border-radius:50%;border:2px solid var(--g);box-shadow:0 0 14px var(--gl);object-fit:cover}
+.logo-text .brand{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--sl);letter-spacing:.04em;display:block;line-height:1.1}
+.logo-text .tag{font-size:.62rem;color:var(--g);letter-spacing:.13em;text-transform:uppercase}
+nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:center}
+nav button{background:none;border:none;cursor:pointer;font-family:'Rajdhani',sans-serif;font-size:.76rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--tm);padding:6px 13px;border-radius:5px;transition:color .2s,background .2s}
+nav button:hover,nav button.active{color:var(--g);background:rgba(79,194,26,.1)}
+nav button.active{border-bottom:2px solid var(--g)}
+
+/* ── COMMON ── */
+.cnt{max-width:1060px;margin:0 auto;padding:0 20px}
+.sec{padding:60px 20px}
+.sec-label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--g);font-weight:700;margin-bottom:7px}
+h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3.4rem);color:var(--sl);line-height:1;margin-bottom:20px;letter-spacing:.02em}
+h2 span{color:var(--g)}
+.rule{width:44px;height:3px;background:var(--g);margin-bottom:28px;border-radius:2px}
+p.body{font-family:'Roboto Condensed',sans-serif;font-size:.97rem;line-height:1.78;color:var(--tm);margin-bottom:14px}
+
+/* ── HERO (HOME) ── */
+.hero{min-height:calc(100vh - 80px);display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:40px 20px}
+.hbg{position:absolute;inset:0;background:radial-gradient(ellipse 65% 55% at 50% 55%,rgba(79,194,26,.08),transparent 70%),linear-gradient(180deg,#0c0e10,#111214)}
+.hex{position:absolute;inset:0;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='64'%3E%3Cpath d='M28 2 L54 18 L54 46 L28 62 L2 46 L2 18 Z' fill='none' stroke='%234fc21a' stroke-width='1'/%3E%3C/svg%3E");background-size:56px 64px}
 .hc{position:relative;z-index:1;max-width:820px}
-.ey{display:inline-flex;align-items:center;gap:8px;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--g);margin-bottom:18px}
-.ey::before,.ey::after{content:'';width:36px;height:1px;background:var(--g);opacity:.5}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--g);margin-bottom:18px}
+.eyebrow::before,.eyebrow::after{content:'';width:36px;height:1px;background:var(--g);opacity:.5}
 h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,8vw,6rem);line-height:.95;color:var(--sl);letter-spacing:.02em;margin-bottom:16px}
 h1 span{color:var(--g)}
-.hs{font-family:'Roboto Condensed',sans-serif;font-size:1rem;font-weight:300;color:var(--tm);max-width:560px;margin:0 auto 32px;line-height:1.65}
+.hero-sub{font-family:'Roboto Condensed',sans-serif;font-size:1rem;font-weight:300;color:var(--tm);max-width:560px;margin:0 auto 32px;line-height:1.65}
 .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.bp{background:linear-gradient(135deg,var(--gd),var(--g));color:#fff;font-family:'Rajdhani',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:12px 28px;border-radius:6px;box-shadow:0 4px 20px rgba(79,194,26,.35);transition:transform .2s,box-shadow .2s;display:inline-block}
-.bp:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(79,194,26,.5)}
-.bo{background:transparent;border:1.5px solid rgba(79,194,26,.45);color:var(--g);font-family:'Rajdhani',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:12px 28px;border-radius:6px;transition:background .2s;display:inline-block}
-.bo:hover{background:rgba(79,194,26,.1)}
+.btn-g{background:linear-gradient(135deg,var(--gd),var(--g));color:#fff;font-family:'Rajdhani',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:none;cursor:pointer;padding:13px 30px;border-radius:6px;box-shadow:0 4px 20px rgba(79,194,26,.35);transition:transform .2s,box-shadow .2s}
+.btn-g:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(79,194,26,.5)}
+.btn-o{background:transparent;border:1.5px solid rgba(79,194,26,.45);color:var(--g);font-family:'Rajdhani',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;padding:13px 30px;border-radius:6px;transition:background .2s}
+.btn-o:hover{background:rgba(79,194,26,.1)}
 
+/* ── MERIL STRIP ── */
 .ms{background:linear-gradient(90deg,var(--d2),#1d2a1d,var(--d2));border-top:1px solid rgba(79,194,26,.12);border-bottom:1px solid rgba(79,194,26,.12);padding:13px 20px;display:flex;align-items:center;justify-content:center;gap:14px;font-size:.76rem;letter-spacing:.12em;color:var(--tm);text-transform:uppercase;flex-wrap:wrap}
 .ms strong{color:var(--g);font-size:.95rem}
 
-section{padding:68px 20px}
-.cnt{max-width:1060px;margin:0 auto}
-.sl{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--g);font-weight:700;margin-bottom:7px}
-h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.9rem,5vw,3.2rem);color:var(--sl);line-height:1;margin-bottom:22px;letter-spacing:.02em}
-h2 span{color:var(--g)}
-.rule{width:44px;height:3px;background:var(--g);margin-bottom:30px;border-radius:2px}
+/* ── QUICK CARDS (HOME) ── */
+.qg{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px;margin-top:40px}
+.qc{background:var(--d3);border:1px solid rgba(79,194,26,.12);border-radius:12px;padding:28px 22px;cursor:pointer;transition:border-color .25s,transform .25s,box-shadow .25s;text-align:left}
+.qc:hover{border-color:rgba(79,194,26,.45);transform:translateY(-4px);box-shadow:0 12px 28px rgba(79,194,26,.12)}
+.qc .qi{font-size:2rem;margin-bottom:12px}
+.qc h4{font-family:'Bebas Neue',sans-serif;font-size:1.25rem;color:var(--sl);margin-bottom:7px;letter-spacing:.03em}
+.qc p{font-family:'Roboto Condensed',sans-serif;font-size:.85rem;color:var(--tm);line-height:1.55}
+.qc .more{font-size:.72rem;color:var(--g);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-top:12px;display:block}
 
-.ag{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-@media(max-width:700px){.ag{grid-template-columns:1fr}}
-.ab p{font-family:'Roboto Condensed',sans-serif;font-size:.97rem;line-height:1.75;color:var(--tm);margin-bottom:14px}
-.fc{background:var(--d3);border:1px solid rgba(79,194,26,.15);border-radius:14px;padding:32px;position:relative;overflow:hidden}
-.fc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gd),var(--g))}
-.fi{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--gd),var(--g));display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:14px;box-shadow:0 4px 18px rgba(79,194,26,.3)}
-.fc h3{font-family:'Bebas Neue',sans-serif;font-size:1.65rem;color:var(--sl);letter-spacing:.02em}
-.fc .ro{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--g);margin-bottom:12px}
-.fc p{font-family:'Roboto Condensed',sans-serif;font-size:.9rem;color:var(--tm);line-height:1.65}
+/* ── ABOUT PAGE ── */
+.founder-card{background:var(--d3);border:1px solid rgba(79,194,26,.15);border-radius:14px;padding:36px;position:relative;overflow:hidden;margin-bottom:32px}
+.founder-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gd),var(--g))}
+.fi{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,var(--gd),var(--g));display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:16px;box-shadow:0 4px 18px rgba(79,194,26,.3)}
+.founder-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--sl);letter-spacing:.02em}
+.founder-card .role{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--g);margin-bottom:14px}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px}
+@media(max-width:600px){.info-grid{grid-template-columns:1fr}}
+.info-box{background:var(--d3);border:1px solid rgba(79,194,26,.1);border-radius:10px;padding:22px}
+.info-box h5{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--g);letter-spacing:.04em;margin-bottom:8px}
+.info-box p{font-family:'Roboto Condensed',sans-serif;font-size:.9rem;color:var(--tm);line-height:1.65}
 
-#services{background:var(--d2)}
-.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
-.sc{background:var(--d3);border:1px solid rgba(79,194,26,.1);border-radius:12px;padding:26px 22px;transition:border-color .25s,transform .25s,box-shadow .25s}
+/* ── SERVICES PAGE ── */
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.sc{background:var(--d3);border:1px solid rgba(79,194,26,.1);border-radius:14px;padding:30px 26px;transition:border-color .25s,transform .25s,box-shadow .25s}
 .sc:hover{border-color:rgba(79,194,26,.4);transform:translateY(-4px);box-shadow:0 12px 28px rgba(79,194,26,.12)}
-.si{font-size:1.9rem;margin-bottom:12px}
-.sc h4{font-family:'Bebas Neue',sans-serif;font-size:1.25rem;color:var(--sl);margin-bottom:7px;letter-spacing:.03em}
-.sc p{font-family:'Roboto Condensed',sans-serif;font-size:.87rem;color:var(--tm);line-height:1.6}
+.sc .si{font-size:2.2rem;margin-bottom:14px}
+.sc h4{font-family:'Bebas Neue',sans-serif;font-size:1.35rem;color:var(--sl);margin-bottom:9px;letter-spacing:.03em}
+.sc p{font-family:'Roboto Condensed',sans-serif;font-size:.9rem;color:var(--tm);line-height:1.65}
+.meril-banner{background:linear-gradient(135deg,#1a2a1a,#0e1a0e);border:1px solid rgba(79,194,26,.25);border-radius:14px;padding:36px;text-align:center;margin-top:40px}
+.meril-banner h3{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--sl);margin-bottom:10px}
+.meril-banner p{font-family:'Roboto Condensed',sans-serif;font-size:.95rem;color:var(--tm);max-width:520px;margin:0 auto}
 
-.di{background:var(--d3);border:1px solid rgba(79,194,26,.13);border-radius:14px;padding:34px 30px;display:flex;gap:26px;flex-wrap:wrap}
-.dii{flex:1;min-width:200px}
-.dn{font-family:'Bebas Neue',sans-serif;font-size:2.6rem;color:var(--g);line-height:1;margin-bottom:6px}
-.dl{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tm);margin-bottom:8px}
-.dii p{font-family:'Roboto Condensed',sans-serif;font-size:.88rem;color:var(--tm);line-height:1.6}
+/* ── DISPATCH PAGE ── */
+.dispatch-hero{background:linear-gradient(135deg,#1a2a1a,#0e160e);border:1px solid rgba(79,194,26,.2);border-radius:16px;padding:40px;margin-bottom:40px;text-align:center}
+.dispatch-hero h3{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--sl);margin-bottom:10px}
+.dispatch-hero p{font-family:'Roboto Condensed',sans-serif;color:var(--tm);font-size:.97rem;max-width:540px;margin:0 auto;line-height:1.7}
+.steps{display:flex;flex-direction:column;gap:0}
+.step{display:flex;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid rgba(79,194,26,.08)}
+.step:last-child{border-bottom:none}
+.step-num{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--g);opacity:.3;line-height:1;flex-shrink:0;width:50px}
+.step-body h4{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--sl);margin-bottom:8px;letter-spacing:.03em}
+.step-body p{font-family:'Roboto Condensed',sans-serif;font-size:.93rem;color:var(--tm);line-height:1.7}
+.dispatch-modes{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}
+@media(max-width:600px){.dispatch-modes{grid-template-columns:1fr}}
+.dm{background:var(--d3);border:1px solid rgba(79,194,26,.12);border-radius:12px;padding:28px}
+.dm .dmi{font-size:2.4rem;margin-bottom:12px}
+.dm h4{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--sl);margin-bottom:8px}
+.dm p{font-family:'Roboto Condensed',sans-serif;font-size:.9rem;color:var(--tm);line-height:1.65}
 
-#team{background:var(--d2)}
-.tg{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:18px}
-.tc{background:var(--d3);border:1px solid rgba(79,194,26,.1);border-radius:12px;padding:22px 14px;text-align:center;transition:border-color .25s,transform .25s}
-.tc:hover{border-color:var(--g);transform:translateY(-3px)}
-.ta{width:52px;height:52px;border-radius:50%;margin:0 auto 10px;background:linear-gradient(135deg,var(--d4),var(--d3));border:2px solid rgba(79,194,26,.3);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--g)}
-.tc h5{font-size:1rem;font-weight:700;color:var(--sl)}
-.tc .dp{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tm)}
+/* ── TEAM PAGE ── */
+.team-intro{background:var(--d3);border:1px solid rgba(79,194,26,.12);border-radius:14px;padding:36px;margin-bottom:40px;text-align:center}
+.team-intro p{font-family:'Roboto Condensed',sans-serif;font-size:1rem;color:var(--tm);max-width:560px;margin:0 auto;line-height:1.7}
+.tg{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px}
+.tc{background:var(--d3);border:1px solid rgba(79,194,26,.1);border-radius:14px;padding:28px 16px;text-align:center;transition:border-color .25s,transform .25s}
+.tc:hover{border-color:var(--g);transform:translateY(-4px)}
+.ta{width:64px;height:64px;border-radius:50%;margin:0 auto 14px;background:linear-gradient(135deg,var(--d4),var(--d3));border:2px solid rgba(79,194,26,.35);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--g)}
+.tc h5{font-size:1.05rem;font-weight:700;color:var(--sl);margin-bottom:4px}
+.tc .dp{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tm)}
+.founder-tc{border-color:rgba(79,194,26,.4);background:linear-gradient(135deg,#1a2a1a,var(--d3))}
+.founder-tc .ta{border-color:var(--g);background:linear-gradient(135deg,var(--gd),var(--g));color:#fff}
 
-.cg{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
-@media(max-width:680px){.cg{grid-template-columns:1fr}}
-.ci{display:flex;gap:14px;margin-bottom:22px;align-items:flex-start}
-.cii{width:42px;height:42px;border-radius:9px;flex-shrink:0;background:rgba(79,194,26,.1);border:1px solid rgba(79,194,26,.2);display:flex;align-items:center;justify-content:center;font-size:1.15rem}
-.cil{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tm);margin-bottom:3px}
-.cit a,.cit span{font-family:'Roboto Condensed',sans-serif;font-size:.98rem;color:var(--sl);text-decoration:none;transition:color .2s;display:block}
+/* ── CONTACT PAGE ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+@media(max-width:680px){.contact-grid{grid-template-columns:1fr}}
+.ci{display:flex;gap:16px;margin-bottom:24px;align-items:flex-start}
+.cii{width:48px;height:48px;border-radius:10px;flex-shrink:0;background:rgba(79,194,26,.1);border:1px solid rgba(79,194,26,.2);display:flex;align-items:center;justify-content:center;font-size:1.3rem}
+.cil{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tm);margin-bottom:4px}
+.cit a,.cit span{font-family:'Roboto Condensed',sans-serif;font-size:1rem;color:var(--sl);text-decoration:none;transition:color .2s;display:block}
 .cit a:hover{color:var(--g)}
-
-.mb{background:var(--d3);border:1px solid rgba(79,194,26,.15);border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:14px}
-.mav{font-family:'Roboto Condensed',sans-serif;font-size:.9rem;color:var(--tm);line-height:1.65}
-.mav strong{color:var(--sl)}
-.mob{display:inline-flex;align-items:center;gap:8px;background:rgba(79,194,26,.1);border:1px solid rgba(79,194,26,.3);color:var(--g);font-family:'Rajdhani',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:10px 18px;border-radius:7px;transition:background .2s;width:fit-content}
-.mob:hover{background:rgba(79,194,26,.2)}
-.mpv{width:100%;height:180px;background:linear-gradient(135deg,#1a2a1a,#0e1a0e);border-radius:8px;display:flex;align-items:center;justify-content:center;position:relative;border:1px solid rgba(79,194,26,.1);overflow:hidden}
-.mpv svg{position:absolute;inset:0;width:100%;height:100%;opacity:.2}
-.mpp{position:absolute;display:flex;flex-direction:column;align-items:center}
+.map-box{background:var(--d3);border:1px solid rgba(79,194,26,.15);border-radius:14px;padding:28px;display:flex;flex-direction:column;gap:16px}
+.map-vis{width:100%;height:190px;background:linear-gradient(135deg,#1a2a1a,#0e1a0e);border-radius:10px;display:flex;align-items:center;justify-content:center;position:relative;border:1px solid rgba(79,194,26,.1);overflow:hidden}
+.map-vis svg{position:absolute;inset:0;width:100%;height:100%;opacity:.2}
+.map-pin{position:absolute;display:flex;flex-direction:column;align-items:center}
 .mpd{width:16px;height:16px;border-radius:50%;background:var(--g);animation:ping 1.8s infinite}
 @keyframes ping{0%,100%{box-shadow:0 0 8px var(--g)}50%{box-shadow:0 0 24px rgba(79,194,26,.9)}}
 .mpl{width:2px;height:16px;background:var(--g);margin-top:2px;opacity:.7}
 .mplabel{background:rgba(17,18,20,.85);border:1px solid rgba(79,194,26,.3);padding:4px 10px;border-radius:5px;font-family:'Rajdhani',sans-serif;font-size:.75rem;font-weight:700;color:var(--g);margin-top:6px;white-space:nowrap}
+.map-addr{font-family:'Roboto Condensed',sans-serif;font-size:.9rem;color:var(--tm);line-height:1.65}
+.map-addr strong{color:var(--sl)}
+.mob{display:inline-flex;align-items:center;gap:8px;background:rgba(79,194,26,.1);border:1px solid rgba(79,194,26,.3);color:var(--g);font-family:'Rajdhani',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:10px 18px;border-radius:7px;transition:background .2s}
+.mob:hover{background:rgba(79,194,26,.2)}
 
-footer{background:var(--d2);border-top:1px solid rgba(79,194,26,.1);padding:26px 20px;text-align:center;font-family:'Roboto Condensed',sans-serif;font-size:.84rem;color:var(--tm)}
+/* ── FOOTER ── */
+footer{background:var(--d2);border-top:1px solid rgba(79,194,26,.1);padding:24px 20px;text-align:center;font-family:'Roboto Condensed',sans-serif;font-size:.84rem;color:var(--tm);margin-top:40px}
 footer strong{color:var(--g)}
 
-.wa{position:fixed;bottom:26px;right:26px;z-index:2000;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#1da851,#25d366);display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.5);transition:transform .25s,box-shadow .25s;animation:pwa 2.4s infinite}
-.wa:hover{transform:scale(1.1);box-shadow:0 8px 30px rgba(37,211,102,.7);animation:none}
+/* ── WHATSAPP FAB ── */
+.wa{position:fixed;bottom:26px;right:26px;z-index:2000;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#1da851,#25d366);display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.5);transition:transform .25s;animation:pwa 2.4s infinite}
+.wa:hover{transform:scale(1.1);animation:none}
 @keyframes pwa{0%,100%{box-shadow:0 4px 18px rgba(37,211,102,.5)}50%{box-shadow:0 4px 30px rgba(37,211,102,.85)}}
 
-.rv{opacity:0;transform:translateY(26px);transition:opacity .55s ease,transform .55s ease}
-.rv.vi{opacity:1;transform:none}
-@media(max-width:460px){nav{display:none};header{padding:10px 14px}}
+@media(max-width:500px){.header-inner{padding:0}.logo-text .brand{font-size:1.1rem}nav button{font-size:.66rem;padding:5px 8px}}
 </style>
 </head>
 <body>
 
+<!-- ══ HEADER ══ -->
 <header>
-  <div class="lw">
-    <img id="logoimg" alt="New Nilam Ortho Enterprises Logo">
-    <div class="lb">
-      <span class="b">New Nilam Ortho Enterprises</span>
-      <span class="t">Orthopaedic Supplies &amp; Distribution</span>
+  <div class="header-inner">
+    <div class="logo-row" onclick="showPage('home')">
+      <img id="logoimg" alt="Logo">
+      <div class="logo-text">
+        <span class="brand">New Nilam Ortho Enterprises</span>
+        <span class="tag">Orthopaedic Supplies &amp; Distribution — Muzaffarpur, Bihar</span>
+      </div>
     </div>
-  </div>
-  <nav>
- 
-  </nav>
-
+    <nav>
+      <button onclick="showPage('home')" id="nav-home">Home</button>
+      <button onclick="showPage('about')" id="nav-about">About</button>
+      <button onclick="showPage('services')" id="nav-services">Services</button>
+      <button onclick="showPage('dispatch')" id="nav-dispatch">Dispatch</button>
+      <button onclick="showPage('team')" id="nav-team">Team</button>
+      <button onclick="showPage('contact')" id="nav-contact">Contact</button>
+    </nav>
   </div>
 </header>
 
-<section class="hero" id="home">
-  <div class="hbg"></div>
-  <div class="hx"></div>
-  <div class="hc">
-    <div class="ey">Trusted Orthopaedic Distributor — Muzaffarpur, Bihar</div>
-    <h1>Precision <span>Ortho</span><br>Supply Chain</h1>
-    <p class="hs">New Nilam Ortho Enterprises delivers world-class orthopaedic products to hospitals, clinics and surgeons across Bihar — with customised orders and reliable dispatch.</p>
-    <div class="ctas">
-      <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="bp" style="cursor:pointer">Get In Touch</a>
-      <a onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})" class="bo" style="cursor:pointer">Our Services</a>
+<!-- ══════════════════════════════════════════
+     HOME PAGE
+══════════════════════════════════════════ -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hbg"></div>
+    <div class="hex"></div>
+    <div class="hc">
+      <div class="eyebrow">Trusted Orthopaedic Distributor — Muzaffarpur, Bihar</div>
+      <h1>Precision <span>Ortho</span><br>Supply Chain</h1>
+      <p class="hero-sub">New Nilam Ortho Enterprises delivers world-class orthopaedic products to hospitals, clinics and surgeons across Bihar — with customised orders and reliable dispatch.</p>
+      <div class="ctas">
+        <button class="btn-g" onclick="showPage('contact')">Get In Touch</button>
+        <button class="btn-o" onclick="showPage('services')">Our Services</button>
+      </div>
     </div>
+  </section>
+  <div class="ms">
+    <span>🤝 Official Collaboration Partner of</span>
+    <strong>MERIL</strong>
+    <span>— India's Premier Healthcare Company</span>
   </div>
-</section>
-
-<div class="ms">
-  <span>🤝 Official Collaboration Partner of</span>
-  <strong>MERIL</strong>
-  <span>— India's Premier Healthcare Company</span>
+  <section class="sec">
+    <div class="cnt">
+      <div class="sec-label">Explore</div>
+      <h2>What We <span>Do</span></h2>
+      <div class="rule"></div>
+      <div class="qg">
+        <div class="qc" onclick="showPage('about')">
+          <div class="qi">🏢</div>
+          <h4>About Us</h4>
+          <p>Learn about our company, our founder Ravi Ranjan Srivastava, and our mission to serve Bihar's healthcare sector.</p>
+          <span class="more">Read More →</span>
+        </div>
+        <div class="qc" onclick="showPage('services')">
+          <div class="qi">🦴</div>
+          <h4>Our Services</h4>
+          <p>Orthopaedic implants, hospital supply contracts, custom orders and more — sourced through our Meril partnership.</p>
+          <span class="more">View Services →</span>
+        </div>
+        <div class="qc" onclick="showPage('dispatch')">
+          <div class="qi">🚌</div>
+          <h4>Dispatch &amp; Delivery</h4>
+          <p>Pan-Bihar bus dispatch, emergency personal delivery, and seamless logistics for urgent surgical needs.</p>
+          <span class="more">How It Works →</span>
+        </div>
+        <div class="qc" onclick="showPage('team')">
+          <div class="qi">👥</div>
+          <h4>Our Team</h4>
+          <p>Meet the dedicated field staff who ensure every order reaches its destination safely and on time.</p>
+          <span class="more">Meet the Team →</span>
+        </div>
+        <div class="qc" onclick="showPage('contact')">
+          <div class="qi">📞</div>
+          <h4>Contact Us</h4>
+          <p>Reach us by phone, WhatsApp or email. We're always available for urgent orthopaedic supply requirements.</p>
+          <span class="more">Get In Touch →</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 <strong>New Nilam Ortho Enterprises</strong>. All rights reserved. Muzaffarpur, Bihar.</p>
+    <p style="margin-top:5px;font-size:.78rem">Partner: <strong>Meril</strong> &nbsp;|&nbsp; Founder: <strong>Ravi Ranjan Srivastava</strong></p>
+  </footer>
 </div>
 
-<section id="about">
-  <div class="cnt">
-    <div class="ag">
-      <div class="ab rv">
-        <div class="sl">Who We Are</div>
-        <h2>Bihar's Dedicated <span>Ortho</span> Supplier</h2>
-        <div class="rule"></div>
-        <p>New Nilam Ortho Enterprises is a specialised orthopaedic supply company based in Muzaffarpur, Bihar. We are the trusted source for hospitals, orthopaedic surgeons and medical clinics seeking premium implants and orthopaedic solutions.</p>
-        <p>We handle standard procurement as well as fully <strong style="color:var(--sl)">customised orders</strong> tailored to the exact requirements of each clinical case — ensuring every patient receives what they need, on time.</p>
-        <p>As an authorised collaboration partner of <strong style="color:var(--g)">Meril</strong>, we supply only certified, quality-assured orthopaedic products sourced directly from one of India's most respected healthcare manufacturers.</p>
-      </div>
-      <div class="fc rv">
+<!-- ══════════════════════════════════════════
+     ABOUT PAGE
+══════════════════════════════════════════ -->
+<div class="page" id="page-about">
+  <section class="sec">
+    <div class="cnt">
+      <div class="sec-label">Who We Are</div>
+      <h2>About <span>Us</span></h2>
+      <div class="rule"></div>
+
+      <div class="founder-card">
         <div class="fi">👤</div>
         <h3>Ravi Ranjan Srivastava</h3>
-        <div class="ro">Founder &amp; Owner</div>
-        <p>With a deep understanding of orthopaedic supply requirements across hospital and clinical settings, Ravi Ranjan established New Nilam Ortho Enterprises to bridge the gap between quality orthopaedic products and healthcare providers across Bihar.</p>
+        <div class="role">Founder &amp; Owner — New Nilam Ortho Enterprises</div>
+        <p class="body">Ravi Ranjan Srivastava is the founder and driving force behind New Nilam Ortho Enterprises. With deep expertise in the orthopaedic medical supply industry, he established this company with a clear vision — to make high-quality orthopaedic products accessible to every hospital, clinic and surgeon across Bihar.</p>
+        <p class="body">His leadership and personal commitment to quality have helped build lasting relationships with healthcare professionals throughout the region, earning the trust of doctors and hospitals who rely on New Nilam for their critical orthopaedic supply needs.</p>
+      </div>
+
+      <p class="body">New Nilam Ortho Enterprises is a specialised orthopaedic supply company headquartered in Muzaffarpur, Bihar. We serve as the trusted sourcing and distribution partner for hospitals, orthopaedic surgeons, and medical clinics seeking premium implants and orthopaedic consumables.</p>
+      <p class="body">We are proud to be an authorised collaboration partner of <strong style="color:var(--g)">Meril</strong> — one of India's most respected healthcare and medical device companies. This partnership ensures that every product we supply meets the highest standards of quality, certification and clinical performance.</p>
+      <p class="body">Beyond standard supply, we also accept fully <strong style="color:var(--sl)">customised orders</strong> — allowing clinicians to specify exact implant types, sizes and configurations for individual patient cases.</p>
+
+      <div class="info-grid">
+        <div class="info-box">
+          <h5>🏥 Who We Serve</h5>
+          <p>Hospitals, orthopaedic surgeons, general physicians, nursing homes, and medical clinics across Muzaffarpur and greater Bihar region.</p>
+        </div>
+        <div class="info-box">
+          <h5>🤝 Meril Partnership</h5>
+          <p>As an official Meril collaboration partner, we supply only certified, quality-assured orthopaedic products backed by one of India's leading healthcare manufacturers.</p>
+        </div>
+        <div class="info-box">
+          <h5>⚙️ Custom Orders</h5>
+          <p>We accept bespoke orthopaedic orders tailored to specific clinical requirements — from non-standard implant sizes to complete surgical kits.</p>
+        </div>
+        <div class="info-box">
+          <h5>📍 Location</h5>
+          <p>Based in Muzaffarpur, Bihar, India — strategically positioned to serve hospitals and clinics across North Bihar efficiently.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+  <footer>
+    <p>&copy; 2025 <strong>New Nilam Ortho Enterprises</strong>. All rights reserved. Muzaffarpur, Bihar.</p>
+  </footer>
+</div>
 
-<section id="services">
-  <div class="cnt">
-    <div class="sl">What We Offer</div>
-    <h2>Our <span>Products</span> &amp; Services</h2>
-    <div class="rule"></div>
-    <div class="sg">
-      <div class="sc rv"><div class="si">🦴</div><h4>Orthopaedic Implants</h4><p>High-quality bone plates, screws, nails, rods and fixation devices sourced through our Meril partnership — certified and clinically proven.</p></div>
-      <div class="sc rv"><div class="si">🏥</div><h4>Hospital Supply</h4><p>Regular supply contracts with hospitals and surgical departments for continuous availability of orthopaedic consumables and instruments.</p></div>
-      <div class="sc rv"><div class="si">⚙️</div><h4>Custom Orders</h4><p>Specialised or non-standard orthopaedic requirements? We accept fully customised orders and coordinate directly with manufacturers.</p></div>
-      <div class="sc rv"><div class="si">🚌</div><h4>Pan-Bihar Dispatch</h4><p>Orders dispatched efficiently via bus networks across Bihar. Receivers collect from the nearest bus station — fast and economical.</p></div>
-      <div class="sc rv"><div class="si">🚑</div><h4>Emergency Delivery</h4><p>For urgent clinical cases or nearby locations, our dedicated staff personally deliver to ensure zero delay in critical situations.</p></div>
-      <div class="sc rv"><div class="si">🤝</div><h4>Doctor Partnerships</h4><p>Long-term supply relationships with orthopaedic surgeons and clinicians, ensuring consistent product availability at competitive pricing.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="dispatch">
-  <div class="cnt">
-    <div class="sl">How We Deliver</div>
-    <h2>Dispatch &amp; <span>Logistics</span></h2>
-    <div class="rule"></div>
-    <div class="di rv">
-      <div class="dii"><div class="dl">Primary Mode</div><div class="dn">🚌</div><p>Orders dispatched via bus services across Bihar. Recipients collect from the nearest bus station — reliable, affordable and network-wide.</p></div>
-      <div class="dii"><div class="dl">Emergency &amp; Local</div><div class="dn">🚀</div><p>For emergency surgical requirements or nearby customers, our field staff personally deliver to your clinic, hospital or OT — no delays.</p></div>
-      <div class="dii"><div class="dl">Custom Orders</div><div class="dn">📦</div><p>Need specific implant sizes, non-stock items or a personalised kit? We coordinate and dispatch bespoke orthopaedic orders on request.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="team">
-  <div class="cnt">
-    <div class="sl">Our People</div>
-    <h2>Meet the <span>Team</span></h2>
-    <div class="rule"></div>
-    <div class="tg">
-      <div class="tc rv"><div class="ta">RR</div><h5>Ravi Ranjan</h5><div class="dp">Founder &amp; Owner</div></div>
-      <div class="tc rv"><div class="ta">PR</div><h5>Prateek</h5><div class="dp">Field Staff</div></div>
-      <div class="tc rv"><div class="ta">RK</div><h5>Rakesh</h5><div class="dp">Field Staff</div></div>
-      <div class="tc rv"><div class="ta">RM</div><h5>Ramod</h5><div class="dp">Field Staff</div></div>
-      <div class="tc rv"><div class="ta">AN</div><h5>Aniket</h5><div class="dp">Field Staff</div></div>
-      <div class="tc rv"><div class="ta">MN</div><h5>Manish</h5><div class="dp">Field Staff</div></div>
-      <div class="tc rv"><div class="ta">YS</div><h5>Yashwant</h5><div class="dp">Field Staff</div></div>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="cnt">
-    <div class="sl">Reach Us</div>
-    <h2>Get In <span>Touch</span></h2>
-    <div class="rule"></div>
-    <div class="cg">
-      <div class="rv">
-        <div class="ci"><div class="cii">📞</div><div class="cit"><div class="cil">Phone</div><a href="tel:+919386391641">+91 93863 91641</a><a href="tel:+918002424038">+91 80024 24038</a></div></div>
-        <div class="ci"><div class="cii">✉️</div><div class="cit"><div class="cil">Email</div><span>nilamortho@gmail.com</span></div></div>
-        <div class="ci"><div class="cii">💬</div><div class="cit"><div class="cil">WhatsApp</div><a href="https://wa.me/919386391641">Chat on WhatsApp →</a></div></div>
-        <div class="ci"><div class="cii">📍</div><div class="cit"><div class="cil">Location</div><span>Muzaffarpur, Bihar, India</span></div></div>
+<!-- ══════════════════════════════════════════
+     SERVICES PAGE
+══════════════════════════════════════════ -->
+<div class="page" id="page-services">
+  <section class="sec">
+    <div class="cnt">
+      <div class="sec-label">What We Offer</div>
+      <h2>Our Products <span>&amp; Services</span></h2>
+      <div class="rule"></div>
+      <div class="sg">
+        <div class="sc">
+          <div class="si">🦴</div>
+          <h4>Orthopaedic Implants</h4>
+          <p>We supply a comprehensive range of orthopaedic implants including bone plates, cortical and cancellous screws, intramedullary nails, K-wires, cannulated screws and fixation devices. All products are sourced through our official Meril partnership and are clinically certified.</p>
+        </div>
+        <div class="sc">
+          <div class="si">🏥</div>
+          <h4>Hospital Supply Contracts</h4>
+          <p>We maintain regular supply agreements with hospitals and surgical departments, ensuring a consistent and uninterrupted stock of orthopaedic consumables, instruments and implants. Ideal for OTs that need reliable ongoing supply without delays.</p>
+        </div>
+        <div class="sc">
+          <div class="si">⚙️</div>
+          <h4>Custom &amp; Specialised Orders</h4>
+          <p>Got a non-standard requirement? We accept fully customised orders — whether it's a specific implant size, an uncommon configuration, or a complete surgical kit built to a surgeon's exact specification. We coordinate directly with manufacturers to fulfill these.</p>
+        </div>
+        <div class="sc">
+          <div class="si">🩺</div>
+          <h4>Doctor &amp; Surgeon Partnerships</h4>
+          <p>We maintain long-term supply relationships with individual orthopaedic surgeons and clinicians. This includes priority ordering, personalised product recommendations and competitive pricing based on volume and frequency of orders.</p>
+        </div>
+        <div class="sc">
+          <div class="si">📦</div>
+          <h4>Bulk &amp; Institutional Supply</h4>
+          <p>Medical institutions, government hospitals and large private hospital chains can place bulk orders for orthopaedic products. We ensure timely dispatch, proper packaging and documentation for all institutional orders.</p>
+        </div>
+        <div class="sc">
+          <div class="si">🔍</div>
+          <h4>Product Consultation</h4>
+          <p>Not sure which implant or product fits your clinical case? Our team can guide you through the available options, specifications and suitability — helping you choose the right product for each patient requirement.</p>
+        </div>
       </div>
-      <div class="mb rv">
-        <div class="mpv">
-          <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-            <line x1="0" y1="50" x2="400" y2="50" stroke="#4fc21a" stroke-width="0.5"/>
-            <line x1="0" y1="100" x2="400" y2="100" stroke="#4fc21a" stroke-width="0.5"/>
-            <line x1="0" y1="150" x2="400" y2="150" stroke="#4fc21a" stroke-width="0.5"/>
-            <line x1="80" y1="0" x2="80" y2="200" stroke="#4fc21a" stroke-width="0.5"/>
-            <line x1="160" y1="0" x2="160" y2="200" stroke="#4fc21a" stroke-width="0.5"/>
-            <line x1="240" y1="0" x2="240" y2="200" stroke="#4fc21a" stroke-width="0.5"/>
-            <line x1="320" y1="0" x2="320" y2="200" stroke="#4fc21a" stroke-width="0.5"/>
-            <circle cx="200" cy="100" r="40" fill="none" stroke="#4fc21a" stroke-width="1"/>
-            <circle cx="200" cy="100" r="70" fill="none" stroke="#4fc21a" stroke-width="0.5" stroke-dasharray="4,4"/>
-          </svg>
-          <div class="mpp">
-            <div class="mpd"></div>
-            <div class="mpl"></div>
-            <div class="mplabel">📍 Muzaffarpur, Bihar</div>
+      <div class="meril-banner">
+        <h3>🤝 Official Meril Partner</h3>
+        <p>As an authorised collaboration partner of Meril — India's leading healthcare company — every product we supply is certified, quality-assured and backed by one of India's most trusted medical device manufacturers.</p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 <strong>New Nilam Ortho Enterprises</strong>. All rights reserved. Muzaffarpur, Bihar.</p>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════
+     DISPATCH PAGE
+══════════════════════════════════════════ -->
+<div class="page" id="page-dispatch">
+  <section class="sec">
+    <div class="cnt">
+      <div class="sec-label">Logistics &amp; Delivery</div>
+      <h2>Dispatch <span>&amp; Delivery</span></h2>
+      <div class="rule"></div>
+
+      <div class="dispatch-hero">
+        <h3>🚌 Serving All of Bihar</h3>
+        <p>We dispatch orthopaedic products across Bihar using a reliable and cost-effective bus network system. Whether it's a routine order or an emergency surgical requirement, we ensure your products reach you on time.</p>
+      </div>
+
+      <div class="dispatch-modes">
+        <div class="dm">
+          <div class="dmi">🚌</div>
+          <h4>Standard Bus Dispatch</h4>
+          <p>For most orders across Bihar, we dispatch via the bus network. Once dispatched, you simply collect your order from the <strong style="color:var(--sl)">nearest bus station</strong> to your location. This is our primary delivery method — fast, reliable and affordable across the entire state.</p>
+        </div>
+        <div class="dm">
+          <div class="dmi">🚑</div>
+          <h4>Emergency &amp; Local Delivery</h4>
+          <p>For urgent surgical cases or customers located near Muzaffarpur, our <strong style="color:var(--sl)">field staff personally deliver</strong> the order directly to your clinic, hospital or OT. No delays, no middlemen — we come to you when it matters most.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:48px">
+        <div class="sec-label">How It Works</div>
+        <h2 style="font-size:2rem">Step by <span>Step</span></h2>
+        <div class="rule"></div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h4>Place Your Order</h4>
+              <p>Contact us via phone or WhatsApp with your product requirement — standard implants, custom sizes, or a bulk hospital order. Our team will confirm availability and pricing immediately.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h4>Order Confirmation</h4>
+              <p>We confirm your order details, quantity, and dispatch timeline. For custom orders, we coordinate with manufacturers and keep you updated on the expected delivery window.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h4>Dispatch via Bus Network</h4>
+              <p>Your order is securely packaged and dispatched on the bus network. We send you the bus name, departure time and the nearest collection station to your location.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h4>Collect at Bus Station</h4>
+              <p>You or your representative collect the package from the nearest bus station. For emergency cases, our staff deliver directly to your clinic or hospital instead.</p>
+            </div>
           </div>
         </div>
-        <div class="mav"><strong>New Nilam Ortho Enterprises</strong><br>Muzaffarpur, Bihar, India<br>Near Muzaffarpur District</div>
-        <a class="mob" href="https://maps.app.goo.gl/BgPVWPhd4ymQN1bz8">🗺️ Open in Google Maps</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+  <footer>
+    <p>&copy; 2025 <strong>New Nilam Ortho Enterprises</strong>. All rights reserved. Muzaffarpur, Bihar.</p>
+  </footer>
+</div>
 
-<footer>
-  <p>&copy; 2025 <strong>New Nilam Ortho Enterprises</strong>. All rights reserved. Muzaffarpur, Bihar, India.</p>
-  <p style="margin-top:6px;font-size:.78rem">Orthopaedic Supplies &amp; Distribution &nbsp;|&nbsp; Official Partner: <strong>Meril</strong> &nbsp;|&nbsp; Founder: <strong>Ravi Ranjan Srivastava</strong></p>
-</footer>
+<!-- ══════════════════════════════════════════
+     TEAM PAGE
+══════════════════════════════════════════ -->
+<div class="page" id="page-team">
+  <section class="sec">
+    <div class="cnt">
+      <div class="sec-label">Our People</div>
+      <h2>Meet the <span>Team</span></h2>
+      <div class="rule"></div>
+      <div class="team-intro">
+        <p>Behind every timely delivery and fulfilled order is a dedicated team of professionals committed to serving Bihar's healthcare community. From our founder to our field staff, every member of New Nilam Ortho Enterprises plays a vital role in ensuring hospitals and doctors receive exactly what they need, when they need it.</p>
+      </div>
+      <div class="tg">
+        <div class="tc founder-tc">
+          <div class="ta">RR</div>
+          <h5>Ravi Ranjan Srivastava</h5>
+          <div class="dp">Founder &amp; Owner</div>
+        </div>
+        <div class="tc">
+          <div class="ta">PR</div>
+          <h5>Prateek</h5>
+          <div class="dp">Field Staff</div>
+        </div>
+        <div class="tc">
+          <div class="ta">RK</div>
+          <h5>Rakesh</h5>
+          <div class="dp">Field Staff</div>
+        </div>
+        <div class="tc">
+          <div class="ta">RM</div>
+          <h5>Ramod</h5>
+          <div class="dp">Field Staff</div>
+        </div>
+        <div class="tc">
+          <div class="ta">AN</div>
+          <h5>Aniket</h5>
+          <div class="dp">Field Staff</div>
+        </div>
+        <div class="tc">
+          <div class="ta">MN</div>
+          <h5>Manish</h5>
+          <div class="dp">Field Staff</div>
+        </div>
+        <div class="tc">
+          <div class="ta">YS</div>
+          <h5>Yashwant</h5>
+          <div class="dp">Field Staff</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 <strong>New Nilam Ortho Enterprises</strong>. All rights reserved. Muzaffarpur, Bihar.</p>
+  </footer>
+</div>
 
+<!-- ══════════════════════════════════════════
+     CONTACT PAGE
+══════════════════════════════════════════ -->
+<div class="page" id="page-contact">
+  <section class="sec">
+    <div class="cnt">
+      <div class="sec-label">Reach Us</div>
+      <h2>Get In <span>Touch</span></h2>
+      <div class="rule"></div>
+      <div class="contact-grid">
+        <div>
+          <div class="ci">
+            <div class="cii">📞</div>
+            <div class="cit">
+              <div class="cil">Phone</div>
+              <a href="tel:+919386391641">+91 93863 91641</a>
+              <a href="tel:+918002424038">+91 80024 24038</a>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="cii">✉️</div>
+            <div class="cit">
+              <div class="cil">Email</div>
+              <span>nilamortho@gmail.com</span>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="cii">💬</div>
+            <div class="cit">
+              <div class="cil">WhatsApp</div>
+              <a href="https://wa.me/919386391641">+91 93863 91641 — Chat Now →</a>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="cii">📍</div>
+            <div class="cit">
+              <div class="cil">Location</div>
+              <span>Muzaffarpur, Bihar, India</span>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="cii">⏰</div>
+            <div class="cit">
+              <div class="cil">Availability</div>
+              <span>Mon – Sat: 9:00 AM – 7:00 PM</span>
+              <span style="font-size:.85rem;color:var(--tm)">Emergency orders accepted anytime</span>
+            </div>
+          </div>
+        </div>
+        <div class="map-box">
+          <div class="map-vis">
+            <svg viewBox="0 0 400 200"><line x1="0" y1="50" x2="400" y2="50" stroke="#4fc21a" stroke-width="0.5"/><line x1="0" y1="100" x2="400" y2="100" stroke="#4fc21a" stroke-width="0.5"/><line x1="0" y1="150" x2="400" y2="150" stroke="#4fc21a" stroke-width="0.5"/><line x1="80" y1="0" x2="80" y2="200" stroke="#4fc21a" stroke-width="0.5"/><line x1="160" y1="0" x2="160" y2="200" stroke="#4fc21a" stroke-width="0.5"/><line x1="240" y1="0" x2="240" y2="200" stroke="#4fc21a" stroke-width="0.5"/><line x1="320" y1="0" x2="320" y2="200" stroke="#4fc21a" stroke-width="0.5"/><circle cx="200" cy="100" r="40" fill="none" stroke="#4fc21a" stroke-width="1"/><circle cx="200" cy="100" r="70" fill="none" stroke="#4fc21a" stroke-width="0.5" stroke-dasharray="4,4"/></svg>
+            <div class="map-pin"><div class="mpd"></div><div class="mpl"></div><div class="mplabel">📍 Muzaffarpur, Bihar</div></div>
+          </div>
+          <div class="map-addr"><strong>New Nilam Ortho Enterprises</strong><br>Muzaffarpur, Bihar, India</div>
+          <a class="mob" href="https://maps.app.goo.gl/BgPVWPhd4ymQN1bz8">🗺️ Open in Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 <strong>New Nilam Ortho Enterprises</strong>. All rights reserved. Muzaffarpur, Bihar.</p>
+    <p style="margin-top:5px;font-size:.78rem">Partner: <strong>Meril</strong> &nbsp;|&nbsp; Founder: <strong>Ravi Ranjan Srivastava</strong></p>
+  </footer>
+</div>
+
+<!-- ══ WHATSAPP FAB ══ -->
 <a class="wa" href="https://wa.me/919386391641" title="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <script>
-// Smooth scroll helper
-function scrollTo(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+// Inject logo
+document.getElementById('logoimg').src='data:image/jpeg;base64,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';
 
-// Logo - injected by build
-document.getElementById('logoimg').src = 'data:image/jpeg;base64,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';
+// Page navigation
+function showPage(name){
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('nav button').forEach(function(b){b.classList.remove('active')});
+  var pg=document.getElementById('page-'+name);
+  if(pg){pg.classList.add('active');window.scrollTo(0,0)}
+  var nb=document.getElementById('nav-'+name);
+  if(nb){nb.classList.add('active')}
+}
 
-// Visitor counter
-(function(){
-  var k='nnoe3',s='nnoe3s';
-  var c=parseInt(localStorage.getItem(k)||'0',10);
-  if(!sessionStorage.getItem(s)){c++;localStorage.setItem(k,c);sessionStorage.setItem(s,'1')}
-  document.getElementById('vc').textContent=c>=1000?(c/1000).toFixed(1)+'K':String(c);
-})();
-
-// Scroll reveal
-var obs=new IntersectionObserver(function(e){e.forEach(function(i){if(i.isIntersecting){i.target.classList.add('vi');obs.unobserve(i.target)}})},{threshold:0.1});
-document.querySelectorAll('.rv').forEach(function(el){obs.observe(el)});
+// Set home as default active nav
+document.getElementById('nav-home').classList.add('active');
 </script>
 </body>
 </html>
